@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Formulário</title>
+    <style>
+        body{
+            background-color: rgb(106, 18, 18);
+            color: aliceblue;
+            font-family: 'Inter', sans-serif;
+}
+        
+
+        header{
+            border: 2px solid #f3f2f2;
+            border-radius: 10px; 
+            padding: 15px;
+
+        }
+
+        table{
+            border: 2px solid #f3f2f2;
+            border-radius: 10px; 
+            padding: 15px;
+
+        }
+
+        .most{
+            position: fixed;
+            padding: 15px;
+            top: 19%;
+            left: 47%;
+            border: solid 2px ;
+            border-radius: 10px;
+            
+            
+        }
+
+        .rodape{
+            text-align: center;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Aula Formulário</h1></header>
+    <br>
+    <br>
+    <br>
+
+    <nav>
+
+    </nav>
+
+    <main>
+<form action="">
+    <table>
+         <tr>
+            <td colspan="2"><b>Dados Pessoais:</b></td>
+            
+        </tr>
+
+        <tr>
+            <td>Nome:</td>
+            <td><input type="text" name="nome" id="nome"></td>
+        </tr>
+         <tr>
+            <td>Data de nascimento:</td>
+            <td><input type="date" name="dn" id="dn"></td>
+        </tr>
+         <tr>
+            <td> E-mail:</td>
+            <td><input type="email" name="correio" id="correio"></td>
+        </tr>
+         <tr>
+            <td>Documento:</td>
+            <td><input type="texto" name="doc" id="doc"></td>
+        </tr>
+         <tr>
+            <td colspan="2"><b>Endereço:</b></td>
+            
+        </tr>
+         <tr>
+            <td>Rua:</td>
+            <td><input type="text" name="rua" id="rua"></td>
+        </tr>
+         <tr>
+            <td>Número:</td>
+            <td><input type="number" name="num" id="num"></td>
+        </tr>
+         <tr>
+            <td>Bairro:</td>
+            <td><input type="text" name="bar" id="bar"></td>
+        </tr>
+         <tr>
+            <td> Cidade:</td>
+            <td><input type="text" name="cid" id="cid"></td>
+        </tr>
+         <tr>
+            <td>CEP:</td>
+            <td><input type="text" name="cep1" id="cep1" size="19"> - 
+                <input type="text" name="cep2" id="cep2" size="4"></td>
+        </tr>
+         <tr>
+            <td colspan="2"><b>Cursos:</b></td>
+            
+        </tr>
+         <tr>
+            <td colspan="2"> Qual curso de TI você está fazendo?</td>
+        </tr>
+         <tr>
+            <td><input type="radio" name="cur" id="cl" value="livre"></td>
+            <td>Curso livre</td>
+        </tr>
+         <tr>
+            <td><input type="radio" name="cur" id="ct" value="técnico"></td>
+            <td>Curso técnico</td>
+        </tr>
+         <tr>
+            <td><input type="radio" name="cur" id="gr" value="graduação"></td>
+            <td>Graduação</td>
+        </tr>
+         <tr>
+            <td colspan="2">Quais linguasgens de programação você gosta?</td>
+        </tr>
+         <tr>
+            <td><input type="checkbox" name="html" id="html" value="html">HTML</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="php" id="php" value="php">PHP</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="js" id="js" value="js">JavaScript</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="pyton" id="python" value="python">Pyton</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="java" id="java" value="java">Java</td>
+            <td></td>
+        </tr>
+         <tr>
+            <td colspan="2">Qual carreira quer seguir em TI?</td>
+        </tr>
+        <tr>
+            <td>
+                <select  id="carreira">
+                    <option value="programador">programador</option>
+                    <option value="Analista">Analista</option>
+                    <option value="design">Design</option>
+                    <option value="dba">analista de dados</option>
+                </select>
+        </td>
+        
+        </tr>
+        <tr>
+            <td><input type="reset" value="Apagar"></td>
+            <td><input type="button" onclick="ler()"value=Enviar></td>
+        </tr>
+        
+        
+    </table>
+    
+    </form>
+<div id="mostra" class="most" > </div>
+    </main>
+
+    <footer><h1 class="rodape">Programação WEB - Felipe Rosa Gomes</h1></footer>
+ 
+ <script>
+    function ler(){
+        
+      let nome  = document.getElementById("nome").value;
+      let dn  = document.getElementById("dn").value;
+      let correio  = document.getElementById("correio").value;
+      let doc  = document.getElementById("doc").value;
+      let rua  = document.getElementById("rua").value;
+      let num  = document.getElementById("num").value;
+      let bar  = document.getElementById("bar").value;
+      let cid  = document.getElementById("cid").value;
+      let cep1  = document.getElementById("cep1").value;
+      let cep2  = document.getElementById("cep2").value;
+      let carreira =document.getElementById("carreira").value;
+
+
+      let curso = "";
+      if(document.getElementById("cl").checked){
+        curso = document.getElementById("cl").value;}
+
+     else if (document.getElementById("ct").checked){
+     curso = document.getElementById("ct").value;}
+
+    else if (document.getElementById("gr").checked){
+    curso = document.getElementById("gr").value;}
+
+            let html ="";
+             if(document.getElementById("html").checked){
+                html = document.getElementById("html").value;}
+
+            let php ="";
+            if(document.getElementById("php").checked){
+                php = document.getElementById("php").value;}
+
+            let js ="";
+            if(document.getElementById("js").checked){
+                js = document.getElementById("js").value;}
+
+            let python ="";
+            if(document.getElementById("python").checked){
+                python = document.getElementById("python").value;}
+
+            let java ="";
+             if(document.getElementById("java").checked){
+                java = document.getElementById("java").value;}
+
+
+      document.getElementById("mostra").innerHTML = `
+      <h2>Dados Pessoais :</h2>
+      <p><b>Nome :</b> ${nome}</p>
+      <p><b>Nascimento : </b>${dn}</p>
+      <p><b>E-mail : </b> ${correio}</p>
+      <p><b>Documento: </b> ${doc}</p>
+      <h2>Endereço :</h2>
+      <p><b>Rua: </b> ${rua}</p>
+      <p><b>Número: </b> ${num}</p>
+      <p><b>Bairro: </b> ${bar}</p>
+      <p><b>Cidade: </b> ${cid}</p>
+      <p><b>CEP: </b> ${cep1}${- cep2}</p>
+      <h2>Tecnologias :</h2>
+      <p><b>Tipo de curso: </b> ${curso}</p>
+      <p><b>Linguagens: </b> ${html} ${php} ${java} ${js} ${python}</p>
+      <p><b>Carreira: </b> ${carreira}<p>
+      `
+      
+    }
+    
+ </script>   
+
+</body>
+</html>
